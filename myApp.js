@@ -36,7 +36,11 @@ app.get('/', (req, res) => {
 
 
 /** 4) Serve static assets  */
-
+app.use("/assets", express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
+// both work 
+// if the path is not passed it will start are root directory
+// this is for CSS, images file and JS Scripts
 
 /** 5) serve JSON on a specific route */
 
