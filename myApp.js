@@ -2,17 +2,28 @@
 var express = require('express');
 var app = express();
 
+
 // --> 7)  Mount the Logger middleware here
+
 
 
 // --> 11)  Mount the body-parser middleware  here
 
 
 /** 1) Meet the node console. */
-
+var HW = 'Hello World'; // has to be a Var to pass into console.log to allow for logging
+console.log(HW);
 
 /** 2) A first working Express Server */
+app.get('/', (req, res) => {
+	res.send('Hello Express');
+});
 
+//app.get is and express function to server web pages
+//'/' is for root home page
+//(req, res) - is request and response being passed into the function
+// => ES6 function call 
+// res.send(); is what will be servered on the webpage
 
 /** 3) Serve an HTML file */
 
