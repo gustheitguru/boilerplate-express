@@ -15,9 +15,9 @@ var HW = 'Hello World'; // has to be a Var to pass into console.log to allow for
 console.log(HW);
 
 /** 2) A first working Express Server */
-app.get('/', (req, res) => {
-	res.send('Hello Express');
-});
+// app.get('/', (req, res) => {
+// 	res.send('Hello Express');
+// });
 
 //app.get is and express function to server web pages
 //'/' is for root home page
@@ -26,6 +26,13 @@ app.get('/', (req, res) => {
 // res.send(); is what will be servered on the webpage
 
 /** 3) Serve an HTML file */
+app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/views/index.html');
+});
+//same functions as project 2
+// res.sendFile - will send and HTML file
+// __dirname is node development best practice for returning root development
+// + file path to index.html
 
 
 /** 4) Serve static assets  */
