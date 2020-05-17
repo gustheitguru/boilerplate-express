@@ -1,9 +1,16 @@
 {
 	"name": "fcc-learn-npm-package-json",
-	"author": "Gus",
+  "author": "Gus",
+  "description": "A project that does something awesome",
+  "keywords": [ "freecodecamp", "testProject", "LearningNPM" ],
+  "version": "1.2.0",
+  "license": "MIT",
 	"dependencies": {
-		"express": "^4.14.0"
-	},
+  "package-name": "version",
+  "express": "4.14.0",
+  //"moment": "~2.10.2" - allows npm to install to the latest 2.10.x version
+  "moment": "^2.x.x" // - npm would be allowed to update to any 2.x.x version
+},
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
