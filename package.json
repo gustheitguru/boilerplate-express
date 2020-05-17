@@ -1,17 +1,18 @@
 {
-	"name": "fcc-learn-node-with-express",
-	"version": "0.1.0",
+	"name": "fcc-learn-npm-package-json",
+	"author": "Gus",
 	"dependencies": {
-		"express": "^4.14.0",
-		"body-parser": "^1.15.2",
-		"cookie-parser": "^1.4.3",
-		"fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git"
+		"express": "^4.14.0"
 	},
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
 	},
 	"engines": {
-		"node": "4.4.5"
+		"node": "8.11.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://idontknow/todo.git"
 	}
 }
