@@ -54,17 +54,29 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 /** 6) Use the .env file to configure the app */
 // commands are processed as writen. first to last had to comment out step 5 to get step 6 to work
-app.get('/json', (req, res) => {
-if (process.env.MESSAGE_STYLE === "uppercase")
-  res.json({"message": "HELLO JSON"});
-}) else
-  res.json({"message": "Hello json"});
+// app.get('/json', (req, res) => {
+// if (process.env.MESSAGE_STYLE === "uppercase")
+//   res.json({"message": "HELLO JSON"});
+// }) else
+//   res.json({"message": "Hello json"});
 // process.env looks at the .env file and checks for varibles
 // if statment to check which response to send 
 
  
 /** 7) Root-level Middleware - A logger */
+//  place it before all the routes ! - have to comment out step 6
+/** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
+app.use(function middleware(req, res, next){
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string);
+  next();
+});
+// setting up varible 
+// var is using the req.method spce req.path - requesting client IP 
+// req.method - uses all HTTP methods (GET, POST, PUT, DELETE)
+// req.path - what ever is after the URL/ 
+// req.ip - is requesting client IP 
 
 
 /** 8) Chaining middleware. A Time server */
