@@ -43,6 +43,13 @@ app.use("/assets", express.static(__dirname + "/public"));
 // this is for CSS, images file and JS Scripts
 
 /** 5) serve JSON on a specific route */
+app.get('/json', (req, res) => {
+  res.json({"message": "Hello json"});
+});
+//JSON response test by going to url/json
+// put in /json as directory of json data 
+// can run fucntions to return real time data
+// res.json() can send a message or query a DB
 
 
 /** 6) Use the .env file to configure the app */
