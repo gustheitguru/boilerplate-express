@@ -67,11 +67,11 @@ app.use("/assets", express.static(__dirname + "/public"));
 //  place it before all the routes ! - have to comment out step 6
 /** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
-app.use(function middleware(req, res, next){
-  var string = req.method + " " + req.path + " - " + req.ip;
-  console.log(string);
-  next();
-});
+// app.use(function middleware(req, res, next){
+//   var string = req.method + " " + req.path + " - " + req.ip;
+//   console.log(string);
+//   next();
+// });
 // setting up varible 
 // var is using the req.method spce req.path - requesting client IP 
 // req.method - uses all HTTP methods (GET, POST, PUT, DELETE)
@@ -80,6 +80,16 @@ app.use(function middleware(req, res, next){
 
 
 /** 8) Chaining middleware. A Time server */
+app.get('/now', (req, res, next) => {
+        req.time = new Date().toString();
+        next();
+        },
+        function(req, res) { res.send( {time: req.time}); 
+      })
+// setting request time to new global object. string
+// call the next function
+// res.send to send time in JSON form
+//https://marymafa.github.io/2018/09/19/c-Node-and-Express-Implement-a-Root-Level-Request-Logger-Middleware.html
 
 
 /** 9)  Get input from client - Route parameters */
