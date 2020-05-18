@@ -75,7 +75,7 @@ app.use(function middleware(req, res, next){
 // setting up varible 
 // var is using the req.method spce req.path - requesting client IP 
 // req.method - uses all HTTP methods (GET, POST, PUT, DELETE)
-// req.path - what ever is after the URL/ 
+// req.path - what ever is after the URL/... before .. ?
 // req.ip - is requesting client IP 
 
 
