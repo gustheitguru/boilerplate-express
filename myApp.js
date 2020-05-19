@@ -1,6 +1,8 @@
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser') // added this as a required field 
+
 
 
 // --> 7)  Mount the Logger middleware here
