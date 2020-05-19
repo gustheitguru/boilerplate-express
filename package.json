@@ -8,6 +8,7 @@
 	"dependencies": {
   "package-name": "version",
   "express": "4.14.0",
+  "body-parser": "^1.15.2",
   //"moment": "~2.10.2" - allows npm to install to the latest 2.10.x version
   "moment": "^2.x.x" // - npm would be allowed to update to any 2.x.x version
 },
