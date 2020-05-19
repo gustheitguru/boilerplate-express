@@ -93,18 +93,24 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 
 /** 9)  Get input from client - Route parameters */
-app.get('/:word/echo', function(req, res){
-  var word = req.params.word;
-  res.json({echo: word});
-  console.log(word);
-});
+// app.get('/:word/echo', function(req, res){
+//   var word = req.params.word;
+//   res.json({echo: word});
+//   console.log(word);
+// });
 // /:word/echo is on the end of the URL to query app data
 // set word as a Var to req.params.word - location of data
 // return JSON
 
 /** 10) Get input from client - Query parameters */
 // /name?first=<firstname>&last=<lastname>
-
+app.route('/name').get((req, res) => { //have to identify .route and . get spereratly
+  let first = req.query.first; //var 
+  let last = req.query.last;	//var
+  let jsonObj = { name: first + ' ' + last }; //created a JSON object
+  console.log(jsonObj);
+  res.send(jsonObj); //sending json object
+}).post(); //tihs is for the next challange
   
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
