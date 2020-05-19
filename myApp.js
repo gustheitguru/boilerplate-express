@@ -116,7 +116,13 @@ app.route('/name').get((req, res) => { //have to identify .route and . get spere
   
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
+app.use(bodyParser.urlencoded({extended: false}));
 
+//eturns middleware that only parses urlencoded bodies and only looks 
+//at requests where the Content-Type header matches the type option
+//Note: extended=false is a configuration option that tells the parser 
+//to use the classic encoding. When using it, values can be only strings or arrays. 
+//The extended version allows more data flexibility, but it is outmatched by JSON.
 
 /** 12) Get data form POST  */
 
