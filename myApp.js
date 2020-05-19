@@ -80,12 +80,12 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 
 /** 8) Chaining middleware. A Time server */
-app.get('/now', (req, res, next) => {
-        req.time = new Date().toString();
-        next();
-        },
-        function(req, res) { res.send( {time: req.time}); 
-      })
+// app.get('/now', (req, res, next) => {
+//         req.time = new Date().toString();
+//         next();
+//         },
+//         function(req, res) { res.send( {time: req.time}); 
+//       })
 // setting request time to new global object. string
 // call the next function
 // res.send to send time in JSON form
@@ -93,7 +93,14 @@ app.get('/now', (req, res, next) => {
 
 
 /** 9)  Get input from client - Route parameters */
-
+app.get('/:word/echo', function(req, res){
+  var word = req.params.word;
+  res.json({echo: word});
+  console.log(word);
+});
+// /:word/echo is on the end of the URL to query app data
+// set word as a Var to req.params.word - location of data
+// return JSON
 
 /** 10) Get input from client - Query parameters */
 // /name?first=<firstname>&last=<lastname>
