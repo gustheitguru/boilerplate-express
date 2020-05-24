@@ -1,5 +1,5 @@
 {
-	"name": "fcc-learn-npm-package-json",
+  "name": "fcc-learn-npm-package-json",
   "author": "Gus",
   "description": "A project that does something awesome",
   "keywords": [ "freecodecamp", "testProject", "LearningNPM" ],
